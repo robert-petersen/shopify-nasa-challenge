@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PhotoDisplay from "../components/PhotoDisplay";
 
 const LandingPage = () => {
+  useEffect(() => {
+    
+  }, []);
+
   return (
     <div>
       <header>
