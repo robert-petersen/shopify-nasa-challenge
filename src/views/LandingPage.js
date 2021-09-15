@@ -39,7 +39,7 @@ const LandingPage = () => {
       </section>
       <section className="todays_photo">
         <h1>Astronomy Picture of the Day</h1>
-        <PhotoDisplay apod={apod} />
+        <PhotoDisplay photoObject={apod} />
       </section>
     </div>
   )
