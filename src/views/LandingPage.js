@@ -1,5 +1,5 @@
 import React from "react";
-import DisplayPhoto from "../components/DisplayPhoto";
+import PhotoDisplay from "../components/PhotoDisplay";
 
 const LandingPage = () => {
   return (
@@ -26,7 +26,7 @@ const LandingPage = () => {
       </section>
       <section className="todays_photo">
         <h1>Astronomy Picture of the Day</h1>
-        <DisplayPhoto />
+        <PhotoDisplay />
       </section>
     </div>
   )
