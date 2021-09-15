@@ -5,9 +5,7 @@ import { actionCreators } from "../State/actions/index";
 import PhotoDisplay from "../components/PhotoDisplay";
 
 const LandingPage = () => {
-  const { apod } = useSelector((state) => state);
-  // const today = new Date();
-  // const todaysDate = `${String(today.getFullYear())}-${String(today.getMonth() + 1)}-${String(today.getDate())}`
+  const { apod, isfetching, error } = useSelector((state) => state);
   const dispatch = useDispatch();
   const { getAPOD } = bindActionCreators(actionCreators, dispatch);
 
@@ -39,7 +37,8 @@ const LandingPage = () => {
       </section>
       <section className="todays_photo">
         <h1>Astronomy Picture of the Day</h1>
-        <PhotoDisplay photoObject={apod} />
+        { isfetching ? <h2>Fetching Photo Now</h2> : "" }
+        { apod == null ? <h2>{error}</h2> : <PhotoDisplay photoObject={apod} /> }
       </section>
     </div>
   )
