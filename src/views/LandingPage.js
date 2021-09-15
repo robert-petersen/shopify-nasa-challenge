@@ -1,9 +1,18 @@
 import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../State/actions/index";
 import PhotoDisplay from "../components/PhotoDisplay";
 
 const LandingPage = () => {
+  const { apod } = useSelector((state) => state);
+  // const today = new Date();
+  // const todaysDate = `${String(today.getFullYear())}-${String(today.getMonth() + 1)}-${String(today.getDate())}`
+  const dispatch = useDispatch();
+  const { getAPOD } = bindActionCreators(actionCreators, dispatch);
+
   useEffect(() => {
-    
+    // getAPOD();
   }, []);
 
   return (
@@ -30,7 +39,7 @@ const LandingPage = () => {
       </section>
       <section className="todays_photo">
         <h1>Astronomy Picture of the Day</h1>
-        <PhotoDisplay />
+        <PhotoDisplay apod={apod} />
       </section>
     </div>
   )
