@@ -9,13 +9,13 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
+      <NavBar />
       <Switch>
-        <NavBar />
         <Route path="/" component={LandingPage} exact />
         <Route path="/search" component={SearchPage} exact />
         <Route path="/likes" component={LikesPage} exact />
-        <Footer />
       </Switch>
+      <Footer />
     </Router>
   );
 }
