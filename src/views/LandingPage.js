@@ -25,6 +25,7 @@ const LandingPage = () => {
         </div>
       </section>
       <section className="todays_photo">
+        <h1>Astronomy Picture of the Day</h1>
         <DisplayPhoto />
       </section>
     </div>
