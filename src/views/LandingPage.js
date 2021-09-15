@@ -1,12 +1,12 @@
 import React from "react";
-import displayPhoto from "../components/displayPhoto";
+import DisplayPhoto from "../components/DisplayPhoto";
 
 const LandingPage = () => {
   return (
     <div>
-      <head>
+      <header>
         <h1 className="heading" >NASA Photos</h1>
-      </head>
+      </header>
       <section className="about_container">
         <div className="apod_container" >
           <h2>Astronomy Picture of the Day</h2>
@@ -25,7 +25,8 @@ const LandingPage = () => {
         </div>
       </section>
       <section className="todays_photo">
-        <displayPhoto />
+        <h1>Astronomy Picture of the Day</h1>
+        <DisplayPhoto />
       </section>
     </div>
   )
