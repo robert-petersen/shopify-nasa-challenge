@@ -1,7 +1,11 @@
-import React from "react";
-import DisplayPhoto from "../components/DisplayPhoto";
+import React, { useEffect } from "react";
+import PhotoDisplay from "../components/PhotoDisplay";
 
 const LandingPage = () => {
+  useEffect(() => {
+    
+  }, []);
+
   return (
     <div>
       <header>
@@ -26,7 +30,7 @@ const LandingPage = () => {
       </section>
       <section className="todays_photo">
         <h1>Astronomy Picture of the Day</h1>
-        <DisplayPhoto />
+        <PhotoDisplay />
       </section>
     </div>
   )
