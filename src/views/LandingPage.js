@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../State/actions/index";
+// import { useSelector, useDispatch } from "react-redux";
+// import { bindActionCreators } from "redux";
+// import { actionCreators } from "../State/actions/index";
 import PhotoDisplay from "../components/PhotoDisplay";
 
-const LandingPage = () => {
-  const { apod, isFetching, error } = useSelector((state) => state);
-  const dispatch = useDispatch();
-  const { getAPOD, addLike } = bindActionCreators(actionCreators, dispatch);
+const LandingPage = ({ apod, setApod }) => {
+  // const { apod, isFetching, error } = useSelector((state) => state);
+  // const dispatch = useDispatch();
+  // const { getAPOD, addLike } = bindActionCreators(actionCreators, dispatch);
+
 
   useEffect(() => {
     // getAPOD();
