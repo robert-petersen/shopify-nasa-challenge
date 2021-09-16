@@ -21,10 +21,11 @@ const reducer = (state = initialState, action) => {
     case "GET_APOD_FAIL" :
       return { ...state, isFetching: false, error: action.payload };
     case "ADD_LIKE" :
-      return { ...state, likes: state.likes.push(action.payload) };
+      const newLikes1 = [ ...state.likes, action.payload ];
+      return { ...state, likes: newLikes1 };
     case "REMOVE_LIKE" :
-      const newLikes = state.likes.filter( like => like.date !== action.payload)
-      return { ...state, likes: newLikes };
+      const newLikes2 = state.likes.filter( like => like.date !== action.payload);
+      return { ...state, likes: newLikes2 };
     default :
       return state;
   }
