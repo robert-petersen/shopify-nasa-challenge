@@ -6,14 +6,27 @@ import { GiRingedPlanet } from "react-icons/gi";
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className="nav">
       <div className="nav__left">
-        <Link to="/"><GiRingedPlanet /></Link>
-        <Link to="/">NASA Photos</Link>
+        <Link className="nav_icon" to="/"><GiRingedPlanet /></Link>
+        <Link className="nav_title" to="/">NASA Photos</Link>
       </div>
       <div className="nav__right">
-        <Link to="/search"><FaSearch className="nav__icon"/> Search</Link>
-        <Link to="/likes"><FaHeart className="nav__icon"/> My Likes</Link>
+
+        <Link 
+          className="nav_link" 
+          to="/search"
+        >
+          <FaSearch className="nav__icon"/> Search
+        </Link>
+
+        <Link 
+          className="nav_link" 
+          to="/likes"
+        >
+          <FaHeart className="nav__icon"/> My Likes
+        </Link>
+
       </div>
     </nav>
   )
