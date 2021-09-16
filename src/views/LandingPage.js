@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import {Link as LinkR} from "react-router-dom";
+import {Link as LinkS} from "react-scroll";
 import axios from "axios";
 import PhotoDisplay from "../components/PhotoDisplay";
 
@@ -27,20 +29,27 @@ const LandingPage = ({ apod, setApod, liked, setLiked }) => {
         <div className="apod_container" >
           <h2>Astronomy Picture of the Day</h2>
           <p>Stop by everyday to see beautiful pictures from NASA's Astronomy Picture of the Day API!</p>
-          <button>Todays Picture</button>
+          <LinkS 
+            to="apod"
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={0}
+          >Todays Picture</LinkS>
         </div>
         <div className="search_container" >
           <h2>Search NASA Photos</h2>
           <p>Search amazing space related photos by dates or by random!</p>
-          <button>Search</button>
+          <LinkR to="/search">Search</LinkR>
         </div>
         <div className="likes_container" >
           <h2>Save Your Favorites</h2>
           <p>When you see something you like make sure to click or tap the heart to save it for later!</p>
-          <button>My Likes</button>
+          <LinkR to="/likes">My Likes</LinkR>
         </div>
       </section>
-      <section className="todays_photo">
+      <section className="todays_photo" id="apod" >
         <h1>Astronomy Picture of the Day</h1>
         { isFetching ? <h2>Fetching Photo Now</h2> : "" }
         { 
