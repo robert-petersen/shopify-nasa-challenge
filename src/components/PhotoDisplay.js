@@ -1,20 +1,37 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../State/actions/index";
+import React, { useState, useEffect } from "react";
 import { FaHeart } from "react-icons/fa";
 
-const PhotoDisplay = ({ photoObject }) => {
-  const { likes } = useSelector((state) => state);
-  const dispatch = useDispatch();
-  const { removeLike, addLike } = bindActionCreators(actionCreators, dispatch);
+const PhotoDisplay = ({ photoObject, liked, setLiked }) => {
+  const [ isLiked, setIsLiked ] = useState(false);
+
+  const findIfLiked = () => {
+    console.log("liked", liked);
+    if ( liked.includes(photoObject, 0) ) {
+      setIsLiked(true);
+    }
+  }
+
+  useEffect(() => {
+    findIfLiked();
+    console.log("isliked", isLiked)
+  }, [liked]);
 
   const toggleLike = evt => {
     evt.preventDefault();
-    if ( likes.includes(photoObject, 0) === true ) {
-      removeLike(photoObject);
+    console.log("button hit", liked);
+    if ( isLiked ) {
+      console.log("is liked orig", liked);
+      setLiked(liked.filter((likedPhoto) => likedPhoto.date !== photoObject.date));
+      setIsLiked(false);
+      console.log("result", liked);
     } else {
-      addLike(photoObject);
+      console.log("not liked orig", liked);
+      setLiked([
+        ...liked,
+        photoObject
+      ])
+      setIsLiked(true);
+      console.log("results", liked);
     }
   }
 
@@ -26,7 +43,7 @@ const PhotoDisplay = ({ photoObject }) => {
       <p>{photoObject.explanation}</p>
       <a href={photoObject.hdurl} target="_blank" rel="noreferrer">HD Img</a>
       <button onClick={toggleLike}>
-        <FaHeart className={`like_icon ${ likes !== null && likes.includes(photoObject, 0) ? ".liked" : "" }`}/>
+        <FaHeart className={`like_icon ${ isLiked  ? ".liked" : "" }`}/>
       </button>
     </div>
   )

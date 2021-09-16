@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
-import { actionCreators } from "../State/actions/index";
+import axios from "axios";
 import PhotoDisplay from "../components/PhotoDisplay";
 
-const SearchPage = () => {
-  const { searchResults, isFetching, error } = useSelector((state) => state);
-  const dispatch = useDispatch();
-  const { getRandomSearch, getDatesSearch } = bindActionCreators(actionCreators, dispatch);
+const SearchPage = ({ searchResults, setSearchResults, liked, setLiked }) => {
+  const [ isFetching, setIsFetching ] = useState(false);
 
   const initialFormValues = {
     startDate: "",
@@ -15,6 +11,24 @@ const SearchPage = () => {
   }
   const [ formValues, setFormValues ] = useState(initialFormValues);
   const [ disabled, setDisabled ] = useState(true);
+
+  const getDatesSearch = (startDate, endDate) => {
+    setIsFetching(true);
+    axios
+    .get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&start_date=${startDate}&end_date=${endDate}`)
+    .then((res) => setSearchResults(res.data))
+    .catch((err) => console.log("error:", err));
+    setIsFetching(false);
+  }
+
+  const getRandomSearch = () => {
+    setIsFetching(true);
+    axios
+      .get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&count=10`)
+      .then((res) => setSearchResults(res.data))
+      .catch((err) => console.log("error:", err))
+      setIsFetching(false);
+  }
 
   const onSubmit = evt => {
     evt.preventDefault();
@@ -78,8 +92,8 @@ const SearchPage = () => {
       <section>
         { isFetching ? <h2 className="fetching">Fetching Photos Now</h2> : "" }
         { 
-          searchResults == null ? <h2>{error}</h2> : 
-          searchResults.map((result) => <PhotoDisplay photoObject={result} /> )
+          searchResults === {} ? <h2>error</h2> : 
+          searchResults.map((result) => <PhotoDisplay photoObject={result} liked={liked} setLiked={setLiked} /> )
         }
       </section>
     </div>

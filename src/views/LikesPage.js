@@ -1,17 +1,17 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, {useEffect} from "react";
 import PhotoDisplay from "../components/PhotoDisplay";
 
-const LikesPage = () => {
-  const { likes } = useSelector((state) => state);
-  console.log("likes: ", likes)
+const LikesPage = ({ liked, setLiked }) => {
+  useEffect(() => {
+    console.log("liked", liked);
+  }, []);
 
   return (
     <section>
       <h1>My Liked Photos</h1>
       { 
-        likes == null ? <h2>You have no liked photos yet :(</h2> : 
-        likes.map((liked) => <PhotoDisplay photoObject={liked} />)
+        liked.length === 0 ? <h2>You have no liked photos yet :(</h2> : 
+        liked.map((likedPhoto) => <PhotoDisplay photoObject={likedPhoto} liked={liked} setLiked={setLiked} />)
       }
     </section>
   )
