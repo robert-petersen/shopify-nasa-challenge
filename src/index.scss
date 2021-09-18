@@ -59,3 +59,24 @@ body {
   font-family: 'Spartan', sans-serif;
 }
 
+// *** Variables ***
+// background colors
+$background: #333333;
+$background_light: #404040;
+$background_dark: #262626;
+$background_extra_dark: #0d0d0d;
+// text colors
+$text_primary: white;
+$text_secondary: #f2f2f2;
+$text_link: #0b3d91;
+$text_link-hover: #fc3d21;
+
+
+// *** Component Sheet Imports ***
+@import "./app";
+@import "./components/navBar";
+@import "./components/footer";
+@import "./components/photoDisplay";
+@import "./views/landingPage";
+@import "./views/searchPage";
+@import "./views/likesPage";
