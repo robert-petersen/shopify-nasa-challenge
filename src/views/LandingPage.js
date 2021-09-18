@@ -3,6 +3,9 @@ import {Link as LinkR} from "react-router-dom";
 import {Link as LinkS} from "react-scroll";
 import axios from "axios";
 import PhotoDisplay from "../components/PhotoDisplay";
+import APODPhoto from "../images/undraw_relaunch_day_902d.svg";
+import LikePhoto from "../images/undraw_Loving_it_re_jfh4.svg";
+import SearchPhoto from "../images/undraw_Web_search_re_efla.svg";
 
 const LandingPage = ({ apod, setApod, liked, setLiked }) => {
   const [ isFetching, setIsFetching ] = useState(false);
@@ -21,15 +24,21 @@ const LandingPage = ({ apod, setApod, liked, setLiked }) => {
   }, []);
 
   return (
-    <div>
+    <div className="landing_container">
       <header>
         <h1 className="heading" >NASA Photos</h1>
+        <h2 className="heading_desc">Brought to you by NASA's Astronomy Picture of the Day API </h2>
+        <div className="heading_fade"></div>
       </header>
       <section className="about_container">
-        <div className="apod_container" >
-          <h2>Astronomy Picture of the Day</h2>
-          <p>Stop by everyday to see beautiful pictures from NASA's Astronomy Picture of the Day API!</p>
+        <div className="card apod_container" >
+          <img className="card_pic" src={APODPhoto} alt="rocket launch at night" />
+          <div className="card_content">   
+            <h2>Astronomy Picture of the Day</h2>
+            <p>Stop by everyday to see beautiful pictures from NASA's Astronomy Picture of the Day API!</p>
+          </div>
           <LinkS 
+            className="card_link" 
             to="apod"
             smooth={true}
             duration={500}
@@ -38,15 +47,21 @@ const LandingPage = ({ apod, setApod, liked, setLiked }) => {
             offset={0}
           >Todays Picture</LinkS>
         </div>
-        <div className="search_container" >
-          <h2>Search NASA Photos</h2>
-          <p>Search amazing space related photos by dates or by random!</p>
-          <LinkR to="/search">Search</LinkR>
+        <div className="card search_container" >
+          <img className="card_pic" src={SearchPhoto} alt="rocket launch at night" />
+          <div className="card_content">
+            <h2>Search NASA Photos</h2>
+            <p>Search amazing space related photos by dates or by random!</p>
+          </div>
+          <LinkR className="card_link" to="/search">Search</LinkR>
         </div>
-        <div className="likes_container" >
-          <h2>Save Your Favorites</h2>
-          <p>When you see something you like make sure to click or tap the heart to save it for later!</p>
-          <LinkR to="/likes">My Likes</LinkR>
+        <div className="card likes_container" >
+          <img className="card_pic" src={LikePhoto} alt="rocket launch at night" />
+          <div className="card_content">
+            <h2>Save Your Favorites</h2>
+            <p>When you see something you like make sure to click or tap the heart to save it for later!</p>
+          </div>
+          <LinkR className="card_link" to="/likes">My Likes</LinkR>
         </div>
       </section>
       <section className="todays_photo" id="apod" >

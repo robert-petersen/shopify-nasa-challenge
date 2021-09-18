@@ -1,30 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaSearch, FaHeart } from "react-icons/fa";
 import { GiRingedPlanet } from "react-icons/gi";
 
-
 const NavBar = () => {
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if(window.scrollY >= 80) {
+      setScrollNav(true);
+    }
+    else{
+      setScrollNav(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
+
   return (
-    <nav className="nav">
-      <div className="nav__left">
-        <Link className="nav_icon" to="/"><GiRingedPlanet /></Link>
-        <Link className="nav_title" to="/">NASA Photos</Link>
+    <nav className={`nav ${ scrollNav ? "scrolling" : "" }`}>
+      <div className="nav_left">
+        <Link className="nav_icon" to="/" ><GiRingedPlanet /></Link>
+        <Link className="nav_title" to="/" >NASA Photos</Link>
       </div>
-      <div className="nav__right">
+      <div className="nav_right">
 
         <Link 
           className="nav_link" 
           to="/search"
-        >
-          <FaSearch className="nav__icon"/> Search
+        >Search
         </Link>
 
         <Link 
           className="nav_link" 
           to="/likes"
-        >
-          <FaHeart className="nav__icon"/> My Likes
+        >My Likes
         </Link>
 
       </div>
