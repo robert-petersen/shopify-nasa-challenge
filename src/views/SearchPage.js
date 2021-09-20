@@ -57,10 +57,10 @@ const SearchPage = ({ searchResults, setSearchResults, liked, setLiked }) => {
   }
 
   return (
-    <div>
-      <section>
+    <div className="search" >
+      <section className="search_container" >
         <h1>Search NASA Photos</h1>
-        <div>
+        <div className="date_search_container" >
           <h2>Search by Dates</h2>
           <form className="dateSearchForm" onSubmit={onSubmit}>
             <label> Start Date
@@ -84,12 +84,12 @@ const SearchPage = ({ searchResults, setSearchResults, liked, setLiked }) => {
             <button disabled={disabled}>Search</button>
           </form>
         </div>
-        <div>
+        <div className="random_search_container" >
           <h2>Search Random Photos</h2>
           <button onClick={handleClick}>Get Pictures</button>
         </div>
       </section>
-      <section>
+      <section className="results_container" >
         { isFetching ? <h2 className="fetching">Fetching Photos Now</h2> : "" }
         { 
           searchResults === {} ? <h2>error</h2> : 
