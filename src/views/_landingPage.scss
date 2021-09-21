@@ -30,7 +30,6 @@
     .heading_fade {
       width: 100%;
       height: 5vh;
-      // border: 1px solid white;
       background: linear-gradient(180deg, transparent, $background-dark);
     }
   }
@@ -81,6 +80,7 @@
       .card_link {
         padding: 10px;
         border: 1px solid $text_link;
+        border-radius: 10px;
         background-color: $text_link;
         text-decoration: none;
         color: $text_primary;
