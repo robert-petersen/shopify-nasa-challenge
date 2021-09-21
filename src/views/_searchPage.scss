@@ -86,5 +86,10 @@
     flex-direction: column;
     align-items: center;
     padding-top: 5%;
+
+    .fetching_state {
+      font-size: 1.6rem;
+      color: $text_primary;
+    }
   }
 }

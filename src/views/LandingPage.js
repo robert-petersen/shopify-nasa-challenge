@@ -68,7 +68,7 @@ const LandingPage = ({ apod, setApod, liked, setLiked }) => {
         <h1 className="apod_title">Astronomy Picture of the Day</h1>
         { isFetching ? <h2 className="fetching_state" >Fetching Photo Now</h2> : "" }
         { 
-          apod.date == null ? <h2 className="fetching_state" >Error</h2> : 
+          apod.date == null ? <h2 className="fetching_state" >Error Calling API</h2> : 
           <PhotoDisplay photoObject={apod} liked={liked} setLiked={setLiked} /> 
         }
       </section>

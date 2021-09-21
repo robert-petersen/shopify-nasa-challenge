@@ -95,9 +95,9 @@ const SearchPage = ({ searchResults, setSearchResults, liked, setLiked }) => {
         </div>
       </section>
       <section className="results_container" >
-        { isFetching ? <h2 className="fetching">Fetching Photos Now</h2> : "" }
+        { isFetching ? <h2 className="fetching_state" >Fetching Photos Now...</h2> : "" }
         { 
-          searchResults === {} ? <h2>error</h2> : 
+          searchResults === {} ? <h2 className="fetching_state" >Error Calling API</h2> : 
           searchResults.map((result) => <PhotoDisplay photoObject={result} liked={liked} setLiked={setLiked} /> )
         }
       </section>

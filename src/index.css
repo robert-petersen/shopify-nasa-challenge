@@ -414,6 +414,12 @@ body {
   padding-top: 10%;
 }
 
+.landing_container .todays_photo .fetching_state {
+  font-size: 1.6rem;
+  color: white;
+  padding-top: 10%;
+}
+
 .search {
   background-color: #262626;
   min-height: 100vh;
@@ -545,5 +551,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 5%;
+}
+
+.search .results_container .fetching_state {
+  font-size: 1.6rem;
+  color: white;
 }
 /*# sourceMappingURL=index.css.map */
