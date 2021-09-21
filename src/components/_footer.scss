@@ -1,0 +1,31 @@
+footer {
+  min-height: 20vh;
+  background-color: $background-extra-dark;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-top: 5vh;
+
+  .links_container {
+    color: $text_primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    a {
+      text-decoration: none;
+      color: $text_secondary;
+      font-size: 1rem;
+      padding-bottom: 5%;
+
+      &:hover {
+        color: $text_link;
+      }
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10%;
+    }
+  }
+}

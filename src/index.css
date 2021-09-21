@@ -129,7 +129,7 @@ body {
 }
 
 .nav_right .nav_link {
-  color: #f2f2f2;
+  color: #d9d9d9;
   font-size: 1rem;
   text-decoration: none;
   line-height: 1.5;
@@ -154,6 +154,51 @@ body {
   color: #0b3d91;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+
+footer {
+  min-height: 20vh;
+  background-color: #0d0d0d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 5vh;
+}
+
+footer .links_container {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+footer .links_container a {
+  text-decoration: none;
+  color: #d9d9d9;
+  font-size: 1rem;
+  padding-bottom: 5%;
+}
+
+footer .links_container a:hover {
+  color: #0b3d91;
+}
+
+footer .links_container h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10%;
 }
 
 .photo_card {
@@ -181,10 +226,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 5%;
-}
-
-.photo_card:hover {
-  border: 1px solid #0b3d91;
 }
 
 .photo_card h2 {
@@ -292,7 +333,7 @@ body {
 }
 
 .landing_container header .heading_desc {
-  color: #f2f2f2;
+  color: #d9d9d9;
 }
 
 .landing_container header .heading_fade {
@@ -338,7 +379,7 @@ body {
   border-radius: 20px;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border: 2px solid #f2f2f2;
+  border: 2px solid #d9d9d9;
   -webkit-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
 }
@@ -358,7 +399,7 @@ body {
 }
 
 .landing_container .about_container .card .card_content p {
-  color: #f2f2f2;
+  color: #d9d9d9;
   line-height: 1.5;
 }
 
@@ -400,7 +441,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 10%;
 }
 
 .landing_container .todays_photo .apod_title {
@@ -556,5 +596,76 @@ body {
 .search .results_container .fetching_state {
   font-size: 1.6rem;
   color: white;
+}
+
+.likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #262626;
+  min-height: 100vh;
+}
+
+.likes .banner {
+  width: 100%;
+  min-height: 30vh;
+  background-image: url("https://cdn.pixabay.com/photo/2015/07/02/10/13/sky-828648_960_720.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.likes .banner .banner_fade {
+  width: 100%;
+  height: 5vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#262626));
+  background: linear-gradient(180deg, transparent, #262626);
+}
+
+.likes .banner h1 {
+  width: 100%;
+  padding-top: 15vh;
+  text-align: center;
+  font-size: 2.8rem;
+  color: white;
+}
+
+.likes .liked_container {
+  padding-top: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.likes .liked_container .no_likes {
+  color: white;
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=index.css.map */
