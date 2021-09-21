@@ -159,7 +159,7 @@ body {
 .photo_card {
   background-color: #404040;
   padding: 10px;
-  width: 95%;
+  width: 70%;
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
@@ -180,6 +180,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 5%;
 }
 
 .photo_card:hover {
@@ -209,8 +210,9 @@ body {
 .photo_card p {
   width: 90%;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-top: 3%;
+  line-height: 1.5;
 }
 
 .photo_card .icon_container {
@@ -367,6 +369,7 @@ body {
 .landing_container .about_container .card .card_link {
   padding: 10px;
   border: 1px solid #0b3d91;
+  border-radius: 10px;
   background-color: #0b3d91;
   text-decoration: none;
   color: white;
@@ -409,5 +412,138 @@ body {
   color: white;
   border-top: 2px solid #404040;
   padding-top: 10%;
+}
+
+.search {
+  background-color: #262626;
+  min-height: 100vh;
+}
+
+.search .search_container {
+  background-color: #262626;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search .banner {
+  height: 30vh;
+  width: 100%;
+  background-image: url("https://cdn.pixabay.com/photo/2015/07/02/10/13/sky-828648_960_720.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.search .banner .banner_fade {
+  width: 100%;
+  height: 5vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#262626));
+  background: linear-gradient(180deg, transparent, #262626);
+}
+
+.search .banner h1 {
+  width: 100%;
+  padding-top: 15vh;
+  text-align: center;
+  font-size: 2.8rem;
+  color: white;
+}
+
+.search .search_content {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 30vh;
+  border-bottom: 2px solid #404040;
+}
+
+.search .search_content .type_search_container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.search .search_content .type_search_container h2 {
+  font-size: 1.4rem;
+  margin-bottom: 3%;
+}
+
+.search .search_content .type_search_container input {
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.search .search_content .type_search_container button {
+  background-color: #0b3d91;
+  padding: 5px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-size: .8rem;
+  color: white;
+  font-family: 'Spartan', sans-serif;
+}
+
+.search .search_content .type_search_container button:hover {
+  background-color: white;
+  color: #262626;
+}
+
+.search .results_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 5%;
 }
 /*# sourceMappingURL=index.css.map */

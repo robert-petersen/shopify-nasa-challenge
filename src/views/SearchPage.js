@@ -59,34 +59,39 @@ const SearchPage = ({ searchResults, setSearchResults, liked, setLiked }) => {
   return (
     <div className="search" >
       <section className="search_container" >
-        <h1>Search NASA Photos</h1>
-        <div className="date_search_container" >
-          <h2>Search by Dates</h2>
-          <form className="dateSearchForm" onSubmit={onSubmit}>
-            <label> Start Date
-              <input 
-                value={formValues.startDate}
-                onChange={onChange}
-                name="startDate"
-                type="text"
-                placeholder="YYYY-MM-DD"
-              />
-            </label>
-            <label> End Date
-              <input 
-                value={formValues.endDate}
-                onChange={onChange}
-                name="endDate"
-                type="text"
-                placeholder="YYYY-MM-DD"
-              />
-            </label>
-            <button disabled={disabled}>Search</button>
-          </form>
+        <div className="banner" >
+          <h1>Search NASA Photos</h1>
+          <div className="banner_fade"></div>
         </div>
-        <div className="random_search_container" >
-          <h2>Search Random Photos</h2>
-          <button onClick={handleClick}>Get Pictures</button>
+        <div className="search_content" >
+          <div className="type_search_container" >
+            <h2>Search by Dates</h2>
+            <form className="dateSearchForm" onSubmit={onSubmit}>
+              <label> Start Date
+                <input 
+                  value={formValues.startDate}
+                  onChange={onChange}
+                  name="startDate"
+                  type="text"
+                  placeholder="YYYY-MM-DD"
+                />
+              </label>
+              <label> End Date
+                <input 
+                  value={formValues.endDate}
+                  onChange={onChange}
+                  name="endDate"
+                  type="text"
+                  placeholder="YYYY-MM-DD"
+                />
+              </label>
+              <button disabled={disabled}>Search</button>
+            </form>
+          </div>
+          <div className="type_search_container" >
+            <h2>Search Random Photos</h2>
+            <button onClick={handleClick}>Get Pictures</button>
+          </div>
         </div>
       </section>
       <section className="results_container" >
