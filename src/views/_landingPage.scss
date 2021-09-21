@@ -114,6 +114,12 @@
       border-top: 2px solid $background-light;
       padding-top: 10%;
     }
+
+    .fetching_state {
+      font-size: 1.6rem;
+      color: $text_primary;
+      padding-top: 10%;
+    }
   }
 }
 
