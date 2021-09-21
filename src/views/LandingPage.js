@@ -20,7 +20,7 @@ const LandingPage = ({ apod, setApod, liked, setLiked }) => {
   }
 
   useEffect(() => {
-    // getAPOD();
+    getAPOD();
   }, []);
 
   return (

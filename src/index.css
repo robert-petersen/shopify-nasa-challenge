@@ -457,7 +457,7 @@ footer .links_container h2 {
 .landing_container .todays_photo .fetching_state {
   font-size: 1.6rem;
   color: white;
-  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
 .search {

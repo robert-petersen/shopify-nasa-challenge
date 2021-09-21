@@ -1,11 +1,7 @@
-import React, {useEffect} from "react";
+import React from "react";
 import PhotoDisplay from "../components/PhotoDisplay";
 
 const LikesPage = ({ liked, setLiked }) => {
-  useEffect(() => {
-    console.log("liked", liked);
-  }, []);
-
   return (
     <section className="likes" >
       <div className="banner" >

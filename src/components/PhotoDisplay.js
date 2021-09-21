@@ -6,7 +6,6 @@ const PhotoDisplay = ({ photoObject, liked, setLiked }) => {
   const [ isLiked, setIsLiked ] = useState(false);
 
   const findIfLiked = () => {
-    console.log("liked", liked);
     if ( liked.includes(photoObject, 0) ) {
       setIsLiked(true);
     }
@@ -14,25 +13,19 @@ const PhotoDisplay = ({ photoObject, liked, setLiked }) => {
 
   useEffect(() => {
     findIfLiked();
-    console.log("isliked", isLiked)
   }, [liked]);
 
   const toggleLike = evt => {
     evt.preventDefault();
-    console.log("button hit", liked);
     if ( isLiked ) {
-      console.log("is liked orig", liked);
       setLiked(liked.filter((likedPhoto) => likedPhoto.date !== photoObject.date));
       setIsLiked(false);
-      console.log("result", liked);
     } else {
-      console.log("not liked orig", liked);
       setLiked([
         ...liked,
         photoObject
       ])
       setIsLiked(true);
-      console.log("results", liked);
     }
   }
 

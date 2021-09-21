@@ -7,13 +7,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
 function App() {
-  const [ apod, setApod ] = useState({
-    date: "23",
-    title: "test",
-    explanation: "test test",
-    url: "https://apod.nasa.gov/apod/image/1301/N00172886_92_beltramini900.jpg",
-    hdurl: "https://apod.nasa.gov/apod/image/1301/N00172886_92_beltramini900.jpg",
-  });
+  const [ apod, setApod ] = useState({});
   const [ searchResults, setSearchResults ] = useState([]);
   const [ liked, setLiked ] = useState([]);
 
